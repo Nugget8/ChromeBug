@@ -2,8 +2,6 @@
 <html>
     <body>
         <script>
-            const span = document.createElement("span");
-
             document.addEventListener("click", function()
             {
                 document.body.requestPointerLock();
@@ -11,14 +9,9 @@
 
             document.addEventListener("pointermove", function(e)
             {
-                if (e.movementX <= 0)
+                if (e.movementX < 0 || e.movementY < 0)
                 {
-                    console.log(e.movementX);
-                }
-
-                if (e.movementY <= 0)
-                {
-                    console.log(e.movementY);
+                    console.log(e.movementX + ", " + e.movementY);
                 }
             });
         </script>
